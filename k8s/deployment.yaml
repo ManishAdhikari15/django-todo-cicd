@@ -34,9 +34,13 @@ spec:
 
       - name: todo-app
 
-        image: trainwithshubham/django-todo:latest
-
+        image: adhikarimanish15/django-to-do
+       
         ports:
 
         - containerPort: 8000
+        imagePullPolicy: Never
+      
+       
+        
 

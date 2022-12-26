@@ -1,20 +1,14 @@
-apiVersion: v1
-
-kind: Pod
-
+apiVersion: batch/v1
+kind: Job
 metadata:
-
   name: todo-pod
-
 spec:
-
-  containers:
-
-  - name: todo-app
-
-    image: trainwithshubham/django-todo:latest
-
-    ports:
-
-    - containerPort: 8000
-
+  template:
+    metadata:
+      name: todo-pod
+    spec:
+      containers:
+      - name: todo-app
+        image: adhikarimanish15/django-to-do
+        imagePullPolicy: Never
+      restartPolicy: Never
